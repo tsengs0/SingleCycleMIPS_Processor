@@ -1,0 +1,58 @@
+.TEXT
+[0x00400000]        0x8fa40000  lw $4, 0($29)                   ; 102: lw $a0, 0($sp)
+[0x00400004]        0x27a50004  addiu $5, $29, 4                ; 103: addiu $a1, $sp, 4 # argv
+[0x00400008]        0x24a60004  addiu $6, $5, 4                 ; 104: addiu $a2, $a1, 4 # envp
+[0x0040000c]        0x00041080  sll $2, $4, 2                   ; 105: sll $v0, $a0, 2
+[0x00400010]        0x00c23021  addu $6, $6, $2                 ; 106: addu $a2, $a2, $v0
+[0x00400014]        0x0c100008  jal 0x00400020 [main]           ; 107: jal main
+[0x00400018]        0x3402000a  ori $2, $0, 10                  ; 108: li $v0 10
+[0x0040001c]        0x0000000c  syscall                         ; 109: syscall
+[0x00400020]        0x3c011001  lui $1, 4097 [array]            ; 18: la      $t0,array       # coloca em $t0 o endereço do vetor (0x10010000)
+[0x00400024]        0x34280000  ori $8, $1, 0 [array]
+[0x00400028]        0x3c011001  lui $1, 4097 [size]             ; 19: la      $t1,size        # coloca em $t1 o endereço do tamanho do vetor 
+[0x0040002c]        0x34290020  ori $9, $1, 32 [size]
+[0x00400030]        0x8d290000  lw $9, 0($9)                    ; 20: lw      $t1,0($t1)
+[0x00400034]        0x3c011001  lui $1, 4097 [const]            ; 21: la      $t2,const       # coloca em $t2 o endereço da constante
+[0x00400038]        0x342a0024  ori $10, $1, 36 [const]
+[0x0040003c]        0x8d4a0000  lw $10, 0($10)                  ; 22: lw      $t2,0($t2)
+[0x00400040]        0x19200007  blez $9 28 [end_add-0x00400040] ; 23: blez    $t1,end_add
+[0x00400044]        0x8d0b0000  lw $11, 0($8)                   ; 24: lw      $t3,0($t0)
+[0x00400048]        0x016a5821  addu $11, $11, $10              ; 25: addu    $t3,$t3,$t2
+[0x0040004c]        0xad0b0000  sw $11, 0($8)                   ; 26: sw      $t3,0($t0)
+[0x00400050]        0x25080004  addiu $8, $8, 4                 ; 27: addiu   $t0,$t0,4       # atualiza ponteiro do vetor. Lembrar, 1 palavra=4 posições de memória
+[0x00400054]        0x2529ffff  addiu $9, $9, -1                ; 28: addiu   $t1,$t1,-1      # decrementa contador de tamanho do vetor
+[0x00400058]        0x08100010  j 0x00400040 [loop]             ; 29: j       loop
+[0x0040005c]        0x27bdfffc  addiu $29, $29, -4              ; 33: addiu   $sp,$sp,-4      # assume-se $sp inicializado, aloca espaço na pilha
+[0x00400060]        0xafbf0000  sw $31, 0($29)                  ; 35: sw      $ra,0($sp)
+[0x00400064]        0x0c10001d  jal 0x00400074 [sum_tst]        ; 36: jal     sum_tst
+[0x00400068]        0x8fbf0000  lw $31, 0($29)                  ; 37: lw      $ra,0($sp)
+[0x0040006c]        0x27bd0004  addiu $29, $29, 4               ; 38: addiu   $sp,$sp,4       # atualiza apontador de pilha
+[0x00400070]        0x03e00008  jr $31                          ; 39: jr      $ra             # FIM DO PROGRAMA AQUI. Volta para o "SISTEMA OPERACIONAL"
+[0x00400074]        0x3c011001  lui $1, 4097 [var_a]            ; 41: la      $t0,var_a       # pega endereço da primeira variável (pseudo-instrução)
+[0x00400078]        0x34280028  ori $8, $1, 40 [var_a]
+[0x0040007c]        0x8d080000  lw $8, 0($8)                    ; 42: lw      $t0,0($t0)
+[0x00400080]        0x3c011001  lui $1, 4097 [var_b]            ; 43: la      $t1,var_b       # pega endereço da segunda variável (pseudo-instrução)
+[0x00400084]        0x3429002c  ori $9, $1, 44 [var_b]
+[0x00400088]        0x8d290000  lw $9, 0($9)                    ; 44: lw      $t1,0($t1)
+[0x0040008c]        0x01285021  addu $10, $9, $8                ; 45: addu    $t2,$t1,$t0
+[0x00400090]        0x27bdfff8  addiu $29, $29, -8              ; 46: addiu   $sp,$sp,-8      # aloca espaço na pilha
+[0x00400094]        0xafaa0000  sw $10, 0($29)                  ; 47: sw      $t2,0($sp)
+[0x00400098]        0xafbf0004  sw $31, 4($29)                  ; 48: sw      $ra,4($sp)
+[0x0040009c]        0x3c010040  lui $1, 64 [ver_ev]             ; 49: la      $t3,ver_ev      # pega endereço da subrotina ver_ev (pseudo-instrução)
+[0x004000a0]        0x342b00b4  ori $11, $1, 180 [ver_ev]
+[0x004000a4]        0x0160f809  jalr $31, $11                   ; 50: jalr    $ra,$t3
+[0x004000a8]        0x8fbf0004  lw $31, 4($29)                  ; 51: lw      $ra,4($sp)
+[0x004000ac]        0x27bd0008  addiu $29, $29, 8               ; 52: addiu   $sp,$sp,8       # atualiza apontador de pilha
+[0x004000b0]        0x03e00008  jr $31                          ; 53: jr      $ra             # Primeira subrotina chamada acaba aqui. Retorna
+[0x004000b4]        0x8fab0000  lw $11, 0($29)                  ; 55: lw      $t3,0($sp)
+[0x004000b8]        0x316b0001  andi $11, $11, 1                ; 56: andi    $t3,$t3,1       # $t3 <= 1 se parâmetro é ímpar, 0 caso contrário
+[0x004000bc]        0x03e00008  jr $31                          ; 57: jr      $ra             # e retorna
+
+.DATA
+[0x10000000]...[0x1000fffc]        0x00000000
+[0x1000fffc]                        0x00000000
+[0x10010000]                        0xabcdef03  0xcdefab18  0xefabcd35  0xbadcfeab
+[0x10010010]                        0xdcfebacd  0xfebadc77  0xdefabc53  0xcbafed45
+[0x10010020]                        0x00000008  0xffffffff  0x000000ff  0x00000100
+[0x10010030]...[0x10040000]        0x00000000
+

@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/BO-YU TSENG/Documents/FPGA/Xilinx/ATLYS/Prj/processors/ALU/ALU/ALU_test_isim_beh.exe" -prj "C:/Users/BO-YU TSENG/Documents/FPGA/Xilinx/ATLYS/Prj/processors/ALU/ALU/ALU_test_beh.prj" "work.ALU_test" 

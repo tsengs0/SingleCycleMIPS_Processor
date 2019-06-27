@@ -1,0 +1,54 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/CPU_test_isim_beh.exe -prj C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/CPU_test_beh.prj work.CPU_test work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/clk_rst_gen.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/../REG_FILE/REG_FILE.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/../PC_Inst_M/PC.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/../PC_Inst_M/Inst_MEM.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/../PC_Inst_M/Data_MEM.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/Main_control.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/ALU_control.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/../ALU/ALU/ALU.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/CPU.vhd" into library work
+Parsing VHDL file "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/CPU_test.vhd" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/clk_rst_gen.v" Line 19: Port CLK180 is not connected to this instance
+WARNING:HDLCompiler:1016 - "C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/clk_rst_gen.v" Line 42: Port CLK180 is not connected to this instance
+Completed static elaboration
+Compiling module glbl
+Compiling module IBUFG
+Compiling module BUFG
+Compiling module dcm_sp_clock_divide_by_2
+Compiling module dcm_sp_maximum_period_check(cloc...
+Compiling module dcm_sp_maximum_period_check(cloc...
+Compiling module dcm_sp_clock_lost
+Compiling module DCM_SP(CLKFX_DIVIDE=20,CLKFX_MUL...
+Compiling module clockgen1(DIVIDE=20,MULTIPLY=2)
+Compiling module DCM_SP(CLKFX_DIVIDE=20,CLKFX_MUL...
+Compiling module clockgen2(DIVIDE=20,MULTIPLY=4)
+Compiling module clk_rst_gen(20,2,20,4)
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package vl_types
+Compiling architecture behavioral of entity PC [pc_default]
+Compiling architecture behavioral of entity Inst_MEM [inst_mem_default]
+Compiling architecture behavioral of entity REG_FILE [reg_file_default]
+Compiling architecture behavioral of entity ALU [alu_default]
+Compiling architecture behavioral of entity Data_MEM [data_mem_default]
+Compiling architecture behavioral of entity ALU_control [alu_control_default]
+Compiling architecture behavioral of entity Main_control [main_control_default]
+Compiling architecture behavioral of entity CPU [cpu_default]
+Compiling architecture behavior of entity cpu_test
+Time Resolution for simulation is 1ps.
+Waiting for 18 sub-compilation(s) to finish...
+WARNING:Simulator - Unable to copy libPortabilityNOSH.dll to the simulation executable directory: boost::filesystem::copy_file: The system cannot find the path specified, "isim\CPU_test_isim_beh.exe.sim\libPortability.dll".
+Compiled 22 VHDL Units
+Compiled 12 Verilog Units
+Built simulation executable C:/Users/BO-YU TSENG/Documents/Lecture/I467/final_report/processors/Data_Path/CPU_test_isim_beh.exe
+Fuse Memory Usage: 38008 KB
+Fuse CPU Usage: 1484 ms

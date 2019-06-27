@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "C:/Users/BO-YU TSENG/Documents/FPGA/Xilinx/ATLYS/Prj/processors/REG_FILE/REG_FILE_testbench_isim_beh.exe" -prj "C:/Users/BO-YU TSENG/Documents/FPGA/Xilinx/ATLYS/Prj/processors/REG_FILE/REG_FILE_testbench_beh.prj" "work.REG_FILE_testbench" 

@@ -1,0 +1,18 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Fri Feb 03 08:19:48 2017
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "CLK" LOCATE = SITE "L15" LEVEL 1;
+COMP "RST" LOCATE = SITE "T15" LEVEL 1;
+COMP "LED<0>" LOCATE = SITE "U18" LEVEL 1;
+COMP "LED<1>" LOCATE = SITE "M14" LEVEL 1;
+COMP "LED<2>" LOCATE = SITE "N14" LEVEL 1;
+COMP "LED<3>" LOCATE = SITE "L14" LEVEL 1;
+COMP "LED<4>" LOCATE = SITE "M13" LEVEL 1;
+COMP "LED<5>" LOCATE = SITE "D4" LEVEL 1;
+COMP "LED<6>" LOCATE = SITE "P16" LEVEL 1;
+COMP "LED<7>" LOCATE = SITE "N12" LEVEL 1;
+NET "clk_rst_gen_map/clk0" PERIOD = 10 ns HIGH 50%;
+SCHEMATIC END;
+

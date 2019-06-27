@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\BO-YU TSENG\Documents\Lecture\I467\final_report\processors\Data_Path\CPU.ncd
+OUTFILE=C:\Users\BO-YU TSENG\Documents\Lecture\I467\final_report\processors\Data_Path\CPU.bit
+FAMILY=Spartan6
+PART=xc6slx45-3csg324
+WORKINGDIR=C:\Users\BO-YU TSENG\Documents\Lecture\I467\final_report\processors\Data_Path
+LICENSE=WebPack
+USER_INFO=210737576_1777513181_0_916

@@ -1,0 +1,2 @@
+vhdl work "Data_MEM.vhd"
+vhdl work "Data_MEM_testbench.vhd"
